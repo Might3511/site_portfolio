@@ -16,9 +16,11 @@ import {
   Monitor,
   Cpu,
   Globe,
+  Calendar,
   Award,
   Building,
   GraduationCap,
+  Zap,
   Target,
   ChevronDown,
 } from "lucide-react"
@@ -97,7 +99,7 @@ export default function Component() {
                 { id: "swot", label: "SWOT", icon: Target },
                 { id: "safety", label: "Safety", icon: Shield },
                 { id: "pix", label: "PIX", icon: Monitor },
-                { id: "participation", label: "Compétences", icon: Award },
+                { id: "participation", label: "Participation", icon: Calendar },
               ].map(({ id, label, icon: Icon }) => (
                 <button
                   key={id}
@@ -143,7 +145,7 @@ export default function Component() {
               Matteo Debin
             </h1>
             <p className="text-xl sm:text-2xl text-slate-600 mb-8 font-light">
-              Passionné en IoT, Domotique et Impression 3D
+              Étudiant en Automatisation • Passionné par l'IoT & la Domotique
             </p>
             <div className="flex justify-center">
               <Button
@@ -185,8 +187,8 @@ export default function Component() {
                 <h3 className="text-2xl font-bold text-slate-800">Mon Parcours</h3>
               </div>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Je suis diplômé avec la grande distinction de mon Bachelor en Automatisation. Né le 6 septembre 2003. J&apos;aime
-                l&apos;automatisation, les projets électroniques, l&apos;IoT, la domotique et l&apos;impression 3D.
+                Je suis actuellement en 3e année de Bachelor en automatisation. Né le 6 septembre 2003. J'aime
+                l'automatisation, les projets électroniques, l'IoT et la domotique.
               </p>
               <p className="text-blue-600 font-medium">Mon CV est disponible en téléchargement en bas de page.</p>
             </div>
@@ -196,7 +198,7 @@ export default function Component() {
                 { icon: Cpu, title: "Automatisation", desc: "Systèmes intelligents" },
                 { icon: Zap, title: "IoT", desc: "Objets connectés" },
                 { icon: Building, title: "Domotique", desc: "Maison intelligente" },
-                { icon: Globe, title: "Impression 3D", desc: "Modélisation & fabrication" },
+                { icon: Globe, title: "Innovation", desc: "Technologies émergentes" },
               ].map((item, index) => (
                 <Card key={index} className="glass-effect border-0 shadow-lg card-hover">
                   <CardContent className="p-6 text-center">
@@ -288,7 +290,33 @@ export default function Component() {
                 </div>
               </div>
 
+              {/* HE2B - Futur */}
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/2 lg:text-right lg:pr-8">
+                  <Card className="glass-effect shadow-xl border-0 card-hover border-2 border-dashed border-purple-300">
+                    <CardContent className="p-8">
+                      <div className="flex items-center justify-center lg:justify-end mb-4">
+                        <div className="bg-gradient-to-r from-purple-500 to-violet-600 p-3 rounded-full mr-4 shadow-lg">
+                          <Zap className="h-6 w-6 text-white" />
+                        </div>
+                        <span className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                          Futur
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-800 mb-2">HE2B</h3>
+                      <p className="text-lg text-slate-600 font-medium">Ingénieur Industriel en Électronique</p>
+                      <p className="text-slate-500 mt-2">
+                        Spécialisation avancée en ingénierie électronique et systèmes embarqués
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
 
+                {/* Timeline dot - future */}
+                <div className="hidden lg:block w-6 h-6 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full border-4 border-white shadow-lg z-10 opacity-70"></div>
+
+                <div className="lg:w-1/2"></div>
+              </div>
             </div>
           </div>
 
@@ -312,6 +340,15 @@ export default function Component() {
                 icon: Building,
                 gradient: "from-blue-500 to-indigo-600",
                 status: "current",
+              },
+              {
+                title: "HE2B",
+                subtitle: "Ingénieur Industriel en Électronique",
+                year: "Futur",
+                description: "Spécialisation avancée en ingénierie électronique et systèmes embarqués",
+                icon: Zap,
+                gradient: "from-purple-500 to-violet-600",
+                status: "future",
               },
             ].map((item, index) => (
               <Card
@@ -516,7 +553,7 @@ export default function Component() {
         </div>
       </section>
 
-      {/* Compétences & Réalisations Section */}
+      {/* Participation Section */}
       <section
         id="participation"
         data-section="participation"
@@ -526,80 +563,95 @@ export default function Component() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-800 mb-4">Compétences & Réalisations</h2>
+            <h2 className="text-5xl font-bold text-slate-800 mb-4">Expériences et Participations</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Langues */}
-            <Card className="glass-effect shadow-2xl border-0 card-hover">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-600 p-4 rounded-2xl mr-4 shadow-xl">
-                    <Globe className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Langues</h3>
-                </div>
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">Français <span className="text-slate-500">(langue maternelle)</span></span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">Italien <span className="text-slate-500">(langue maternelle)</span></span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">Anglais <span className="text-slate-500">(bon niveau)</span></span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="space-y-8">
+            {[
+              {
+                title: "Salon Indumation",
+                year: "2022-2023 / 2023-2024",
+                icon: Building,
+                content:
+                  "Lors de ma première année de bachelier en automatisation, j'ai eu l'opportunité de participer au salon Indumation, accompagné de mon professeur d'énergétique, Monsieur Delannoy. Indumation est un salon regroupant plus de 240 exposants spécialisés dans l'automatisation industrielle, la fabrication, la logistique, l'aérospatial et l'énergie. Ce salon constitue une véritable vitrine des dernières innovations en matière d'automatisation, de numérisation et d'industrie 4.0.",
+                gradient: "from-blue-500 to-cyan-600",
+              },
+              {
+                title: "Printemps des Sciences",
+                year: "2025",
+                icon: Award,
+                content: null,
+                subSections: [
+                  {
+                    title: "Lego Mindstorm",
+                    content:
+                      "J'ai aidé les élèves à comprendre le fonctionnement des capteurs, à assembler des robots, et à écrire leurs premiers programmes afin que les robots puissent réagir à leur environnement.",
+                  },
+                  {
+                    title: "Domotique",
+                    content:
+                      "J'ai aidé les élèves à comprendre le fonctionnement d'une installation KNX et à écrire leurs premiers programmes sur ETS6.",
+                  },
+                ],
+                gradient: "from-green-500 to-emerald-600",
+              },
+              {
+                title: "Journée Porte Ouverte",
+                year: "2025",
+                icon: Users,
+                content:
+                  "En mars 2025, dans le cadre de mon stage, j'ai participé à la Journée Portes Ouvertes organisée par l'EPHEC. Cette expérience m'a permis de représenter l'école aux côtés de mon professeur et de prendre part à l'accueil des visiteurs.",
+                gradient: "from-purple-500 to-violet-600",
+              },
+              {
+                title: "Journée Entreprise",
+                year: "2025",
+                icon: Briefcase,
+                content:
+                  "La Journée Entreprises-Formations (JEF) est un événement organisé par l'EPHEC, visant à faciliter les échanges entre les étudiants et les entreprises. Cette journée m'a offert l'opportunité de rencontrer directement plusieurs entreprises et d'échanger avec des professionnels du secteur.",
+                gradient: "from-orange-500 to-red-600",
+              },
+              {
+                title: "Déménagement de l'école",
+                year: "2025",
+                icon: Building,
+                content:
+                  "Les 10, 11 et 12 juin 2025, j'ai participé au déménagement de mon école en aidant à emballer les affaires dans des cartons, à trier les objets et à transporter une partie de ces cartons dans leur nouveau bâtiment.",
+                gradient: "from-teal-500 to-cyan-600",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="glass-effect shadow-2xl border-0 card-hover">
+                <CardContent className="p-8 lg:p-12">
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    <div className={`bg-gradient-to-r ${item.gradient} p-4 rounded-2xl flex-shrink-0 shadow-xl`}>
+                      <item.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                        <h3 className="text-2xl font-bold text-slate-800 mb-2 lg:mb-0">{item.title}</h3>
+                        <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                          {item.year}
+                        </span>
+                      </div>
 
-            {/* Logiciels */}
-            <Card className="glass-effect shadow-2xl border-0 card-hover">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-2xl mr-4 shadow-xl">
-                    <Monitor className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Logiciels</h3>
-                </div>
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">Fusion 360</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">SolidWorks</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+                      {item.content && <p className="text-lg text-slate-700 leading-relaxed">{item.content}</p>}
 
-            {/* Programmation */}
-            <Card className="glass-effect shadow-2xl border-0 card-hover">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-purple-500 to-violet-600 p-4 rounded-2xl mr-4 shadow-xl">
-                    <Cpu className="h-8 w-8 text-white" />
+                      {item.subSections && (
+                        <div className="space-y-6 mt-6">
+                          {item.subSections.map((sub, subIndex) => (
+                            <div key={subIndex} className="bg-white/50 rounded-xl p-6 border border-white/20">
+                              <h4 className="text-xl font-semibold text-slate-800 mb-3">{sub.title}</h4>
+                              <p className="text-slate-700 leading-relaxed">{sub.content}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Programmation</h3>
-                </div>
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">Python</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mr-3"></div>
-                    <span className="text-slate-700">C</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
